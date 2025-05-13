@@ -1,0 +1,117 @@
+<!-- Author: Bocaletto Luca -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Banner Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS (open source and responsive) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Overall container styling for the banner slider */
+    .carousel-container {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow: hidden; /* Hide elements that are outside the container */
+    }
+    /* Each banner slide (hidden by default) */
+    .banner-slide {
+      display: none;
+      position: relative;
+    }
+    /* The banner slide that is currently active */
+    .banner-slide.active {
+      display: block;
+    }
+    /* Styling for the banner images */
+    .banner-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Caption styling (positioned at the bottom center of each slide) */
+    .banner-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.25rem;
+    }
+    /* Navigation button styling */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: 1.5rem;
+      z-index: 100;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    /* Dot indicators container */
+    .dots {
+      text-align: center;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      z-index: 100;
+    }
+    /* Styling for each dot */
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background-color: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner Slider Container -->
+  <div id="bannerSlider" class="carousel-container">
+    <!-- Banner Slide 1 -->
+    <div class="banner-slide active">
+      <img src="image1.png" alt="Banner 1">
+      <div class="banner-caption">Banner 1 Caption</div>
+    </div>
+    <!-- Banner Slide 2 -->
+    <div class="banner-slide">
+      <img src="image2.png" alt="Banner 2">
+      <div class="banner-caption">Banner 2 Caption</div>
+    </div>
+    <!-- Banner Slide 3 -->
+    <div class="banner-slide">
+      <img src="image3.png" alt="Banner 3">
+      <div class="banner-caption">Banner 3 Caption</div>
+    </div>
+    <!-- Navigation Buttons -->
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+    <!-- Dot Indicators -->
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </div>
+  
+  <!-- Include the Banner Slider JavaScript -->
+  <script src="Banner.js"></script>
+</body>
+</html>
